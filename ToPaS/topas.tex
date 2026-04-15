@@ -310,11 +310,11 @@ $$\prob(\xi=k)=\frac{C_K^k\cdot C_{N-K}^{n-k}}{C_N^n}$$
     Последовательность случайных величин $\xi_0,\,\xi_1,\,\ldots\,,\,\xi_n$ называется Цепью Маркова, если 
     $$\forall n,\,i_0,\,i_1,\,\ldots\,,\,i_n:\,\prob(\xi_{n-1}=x_{i_{n-1}},\,\ldots\,,\,\xi_0=x_{i_{0}})$$
     верно, что:
-    $$\prob(\xi_{n}=x_{i_{n}}\,|\,\xi_{n-1}=x_{i_{n-1}},\,\ldots\,,\,\xi_0=x_{i_{0}})=\prob(\xi_{n}=x_{i_{n}}\,|\,\xi_{n-1}=x_{i_{n-1}})$$
+    $$\prob(\xi_{n}=x_{i_{n}}\mid \xi_{n-1}=x_{i_{n-1}},\,\ldots\,,\,\xi_0=x_{i_{0}})=\prob(\xi_{n}=x_{i_{n}}\mid \xi_{n-1}=x_{i_{n-1}})$$
 \end{definition}
 \begin{definition}
     Цепь Маркова называется однородной, если:
-    $$\forall i,\,j:\,\prob(\xi_n=x_j\,|\,\xi_{n-1}=x_i)=p_{i,j}\text{ не зависит от }n.$$
+    $$\forall i,\,j:\,\prob(\xi_n=x_j\mid \xi_{n-1}=x_i)=p_{i,j}\text{ не зависит от }n.$$
 \end{definition}
 \begin{definition}
     Матрица $A=(a_{i,j})$ называется стохастической, если:
@@ -330,7 +330,7 @@ $$\prob(\xi=k)=\frac{C_K^k\cdot C_{N-K}^{n-k}}{C_N^n}$$
 \subsubsection{Классификация состояний Марковских цепей}
 \begin{definition}
     Состояние $x_j$ достижимо из $x_i$, если:
-    $$\exists\,k:\,P^k_{ij}=\prob(\xi_{m+k}=x_j\,|\,\xi_m=x_i)>0$$
+    $$\exists\,k:\,P^k_{ij}=\prob(\xi_{m+k}=x_j\mid \xi_m=x_i)>0$$
 \end{definition}
 \begin{definition}
     Состояния называются сообщающимися, если они достижимы друг для друга.
@@ -374,7 +374,7 @@ $$\prob(\xi=k)=\frac{C_K^k\cdot C_{N-K}^{n-k}}{C_N^n}$$
 \begin{definition}
     Пусть $p_0,\,p_1,\,\ldots\,,\,p_m:\,p_m\geq 0;\,p_0+p_1+\ldots+p_m=1$ – начальное распределение. Пусть для $i\geq 2$ определено: $$p_i^{*k}=\sum_{i_1+i_2+\ldots+i_k=i}p_{i_1}\cdot p_{i_2}\cdot\ldots\cdot p_{i_k}$$
     Процесс Гальтона-Ватсона есть марковская цепь $Z(n),\, n\in \N_0$ с начальным распределением $P_0(k)=\prob(Z(0)=k)$ и переходными вероятностями:
-    $$P_{ij}=\prob(Z(n+1)=j\,|\,Z(n)=i)=\begin{cases}
+    $$P_{ij}=\prob(Z(n+1)=j\mid Z(n)=i)=\begin{cases}
         p_j^{*i},\text{ если }i\geq 1,\,j\geq 0\\
         \delta_{0j},\text{ если }i\geq 0,\,j\geq 0
     \end{cases}$$
@@ -876,11 +876,11 @@ $$\prob(\xi=k)=\frac{C_K^k\cdot C_{N-K}^{n-k}}{C_N^n}$$
 \end{statement}
 \begin{statement}[Независимость от приращений]
     Пусть $\tau\sim Exp(\lambda)$. Тогда:
-    $$\prob(\tau>t_1+t_2,\,|\,\tau>t_1)=\prob(\tau>t_2)$$
+    $$\prob(\tau>t_1+t_2,\mid \tau>t_1)=\prob(\tau>t_2)$$
 \end{statement}
 \begin{proof}
     \begin{multline*}
-        \prob(\tau>t_1+t_2,\,|\,\tau>t_1)=\frac{\prob(\tau>t_1+t_2)}{\prob(\tau>t_1)}=\\=\frac{1-\prob(\tau\leq t_1+t_2)}{1-\prob(\tau\leq t_1)}=\frac{1-(1-e^{-\lambda(t_1+t_2)})}{1-(1-e^{-\lambda t_1})}=\frac{e^{-\lambda(t_1+t_2)}}{e^{-\lambda t_1}}=\\=e^{-\lambda t_2}=1-(1-e^{-\lambda t_2})=\prob(\tau>t_2)
+        \prob(\tau>t_1+t_2,\mid \tau>t_1)=\frac{\prob(\tau>t_1+t_2)}{\prob(\tau>t_1)}=\\=\frac{1-\prob(\tau\leq t_1+t_2)}{1-\prob(\tau\leq t_1)}=\frac{1-(1-e^{-\lambda(t_1+t_2)})}{1-(1-e^{-\lambda t_1})}=\frac{e^{-\lambda(t_1+t_2)}}{e^{-\lambda t_1}}=\\=e^{-\lambda t_2}=1-(1-e^{-\lambda t_2})=\prob(\tau>t_2)
     \end{multline*}
 \end{proof}
 

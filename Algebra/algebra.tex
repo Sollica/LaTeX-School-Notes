@@ -182,7 +182,7 @@ $$\begin{matrix}
 \end{definition}
 \begin{definition}
     Декартовым произведением множеств $A$ и $B$ называется множество:
-    $$A\times B=\{x\,|\,x=(a,b),\,a\in A,\,b\in B\}$$
+    $$A\times B=\{x\mid x=(a,b),\,a\in A,\,b\in B\}$$
 \end{definition}
 \begin{definition}
     Число $a$ называется числом кратности $k$ многочлена $f(x)$, если $f(x)$ делится на $(x-a)^k$, но не делится на $(x-a)^{k+1}$.
@@ -447,7 +447,7 @@ $$\begin{matrix}
 \subsection{Эквивалентность и группы}
 
 \begin{definition}
-    Пусть $M$ -- множество, тогда множество $R \subset \{(a,\,b)\,|\,a,\,b\in M\}$ упорядоченных пар элементов $M$ называется бинарным отношением на $M$. 
+    Пусть $M$ -- множество, тогда множество $R \subset \{(a,\,b)\mid a,\,b\in M\}$ упорядоченных пар элементов $M$ называется бинарным отношением на $M$. 
 \end{definition}
 
 \begin{definition}
@@ -462,7 +462,7 @@ $$\begin{matrix}
     $\forall n\in \N,\, p\in \prob:\, n^{p-1}\equiv_p 1$
 \end{theorem}
 \begin{definition}
-    Бинарной операцией $\times$ на множестве $M$ называется отображение из множества упорядоченных пар $M^2=\{(a,\,b)\,|\,a,\,b\in M\}$ в множество $M$.
+    Бинарной операцией $\times$ на множестве $M$ называется отображение из множества упорядоченных пар $M^2=\{(a,\,b)\mid a,\,b\in M\}$ в множество $M$.
 \end{definition}
 \begin{definition}
     Пара $G(M;\,\times)$, $M$ -- множество, $\times$ -- бинарная операция, называется группой, если выполняются свойства:
@@ -722,6 +722,15 @@ $$\begin{matrix}
     Пусть $y=\arcctg x$, $x=\ctg y$, тогда:
     $$\frac{d\arcctg x}{dx}=\frac{1}{\dfrac{d\ctg y}{dy}}=-\sin^2y=-\sin^2(\arcctg x)=-\frac{1}{1+x^2}$$
 \end{proof}
+
+\subsection{Первообразная функция}
+
+\begin{definition}
+    Пусть $f(x)$ -- функция, $F(x)$ называется её первообразной, если $F'(x)=f(x)$.
+\end{definition}
+\begin{definition}
+    Пусть $f(x)$ -- функция, тогда $\{F(x)\mid F'(x)=f(x)\}$ -- неопределённый интеграл.
+\end{definition}
 
 \section{Тригонометрия}
 
@@ -1236,7 +1245,7 @@ $$\begin{matrix}
     Пусть $\vv{r_1},\ldots,\vv{r_n}$ – векторы в $\R^n$. Они называются линейно зависимыми, если $\exists\,a_1,\ldots,a_n$, не равные одновременно нулю, что $a_1\vv{r_1}+\ldots+a_n\vv{r_n}=0$.
 \end{definition}
 \begin{definition}
-    Пусть $X$ – множество, рассмотрим $X\times X=\{(x;y)\,|\,x,y\in X\}$. Тогда $\rho\subset X\times X$ – бинарное отношение.
+    Пусть $X$ – множество, рассмотрим $X\times X=\{(x;y)\mid x,y\in X\}$. Тогда $\rho\subset X\times X$ – бинарное отношение.
 \end{definition}
 \begin{definition}
     Бинарное отношение $\sim\subset X\times X$ называется отношением эквивалентности на множестве $X$, если $\forall\,x,y,z\in X:\,x\sim x;\,x\sim y\iff y\sim x;\,x\sim y,\,y\sim z\iff x\sim z$.
@@ -1435,13 +1444,13 @@ $$\begin{matrix}
     Если расширить базисный минор до $r+1$ строки и $r+1$ столбца, при этом все его строки и столбцы останутся линейно независимыми, тогда $\rank A=r+1$, но по условию $\rank A=r$, противоречие.
 \end{proof}
 \begin{theorem}[Кронекер-Капелли]
-    Система линейных алгебраических уравнений $A\cdot \vv{x}=\vv{b}$ совместна тогда и только тогда, когда $\rank A=\rank\left(A\,|\,\vv{b}\right)$.
+    Система линейных алгебраических уравнений $A\cdot \vv{x}=\vv{b}$ совместна тогда и только тогда, когда $\rank A=\rank\left(A\mid \vv{b}\right)$.
 \end{theorem}
 \begin{proof}
     Пусть система совместна, тогда:
     $$b_i=\sum_{j}a_{ji}x_j;\, \vv{b}=\sum_{j}\vv{a_j}x_j$$
-    То есть, $\vv{b}$ выражается через $\vv{a_i}$, а значит $\rank A=\rank\left(A\,|\,\vv{b}\right)$.
-    Пусть $\rank A=\rank\left(A\,|\,\vv{b}\right)$. Тогда по теореме о базисном миноре она совместна.
+    То есть, $\vv{b}$ выражается через $\vv{a_i}$, а значит $\rank A=\rank\left(A\mid \vv{b}\right)$.
+    Пусть $\rank A=\rank\left(A\mid \vv{b}\right)$. Тогда по теореме о базисном миноре она совместна.
 \end{proof}
 \begin{theorem}[Правило Крамера]
     Пусть дана система из $n$ линейных уравнений с $n$ неизвестным вида $A\cdot \vv{x}=\vv{b}$:
